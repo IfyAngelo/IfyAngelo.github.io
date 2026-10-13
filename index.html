@@ -3,925 +3,1339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michaelangelo Francis-Alfred | ML Engineer & Researcher</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Michaelangelo Francis-Alfred | Graduate Researcher & ML Engineer</title>
+    <meta name="description" content="Academic and professional portfolio of Michaelangelo Ifeanyichukwu Francis-Alfred. Graduate Researcher in Multimodal AI, Cyber Defense, and Applied Machine Learning.">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --gray: #7f8c8d;
+            --bg-primary: #0a0f1d;
+            --bg-surface: #111827;
+            --bg-card: #162032;
+            --bg-card-hover: #1e2c45;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.25);
+            --accent-purple: #818cf8;
+            --accent-teal: #2dd4bf;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.35);
+            --badge-bg: rgba(56, 189, 248, 0.1);
+            --badge-border: rgba(56, 189, 248, 0.25);
+            --success: #10b981;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        
+
         body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.65;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.07) 0%, transparent 45%);
+            background-attachment: fixed;
         }
-        
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: #7dd3fc;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        
+
+        /* Hero / Header Section */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 100px 0 60px;
-            text-align: center;
+            padding: 70px 0 35px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
         }
-        
-        .profile-container {
+
+        .hero-wrapper {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            margin-bottom: 30px;
+            gap: 40px;
+            flex-wrap: wrap;
         }
-        
+
+        .profile-img-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            background-color: #ddd; /* Placeholder color */
+            border: 3px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 30px var(--accent-glow);
+            background-color: var(--bg-card);
+            display: block;
         }
-        
-        .header-content h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
         }
-        
-        .header-content h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 20px;
+
+        .hero-title {
+            font-size: 2.35rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .contact-info {
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--accent);
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            letter-spacing: 0.01em;
         }
-        
-        .contact-item {
+
+        .hero-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+            margin-bottom: 22px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-contact-item i {
+            color: var(--accent);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation Tabs */
+        .nav-wrapper {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 15, 29, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-tab {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid transparent;
+        }
+
+        .nav-tab:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .nav-tab.active {
+            color: var(--accent);
+            background: var(--badge-bg);
+            border-color: var(--badge-border);
+        }
+
+        /* Tab Content & Sections */
+        .tab-content {
+            display: none;
+            padding: 48px 0 80px;
+            animation: fadeIn 0.35s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            margin-bottom: 28px;
+        }
+
+        .section-header h2 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #ffffff;
+        }
+
+        .section-header h2 i {
+            color: var(--accent);
+            font-size: 1.35rem;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        /* Cards & Grids */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            background-color: var(--bg-card-hover);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .card-subtitle {
+            font-size: 0.98rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50px;
-            padding: 10px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+
+        .card-subtitle i {
+            font-size: 0.85rem;
         }
-        
-        .nav-tab {
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+
+        .card-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
         }
-        
-        .nav-tab.active {
-            background-color: white;
-            color: var(--primary);
+
+        /* Bullet Points */
+        .bullet-list {
+            list-style: none;
+            margin-top: 14px;
         }
-        
-        .tab-content {
-            display: none;
-            padding: 60px 0;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        section {
-            margin-bottom: 60px;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--primary);
+
+        .bullet-list li {
             position: relative;
-            padding-bottom: 10px;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
-        
-        h2:after {
+
+        .bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            top: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Action Pill Link for View */
+        .view-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            transition: var(--transition);
+        }
+
+        .view-pill:hover {
+            background: rgba(56, 189, 248, 0.25);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* Research Interest Grid */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+
+        .interest-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-card::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-purple));
         }
-        
-        .section-content {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+        .interest-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
-        
-        .education-item, .experience-item, .research-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
+
+        .interest-icon {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-bottom: 14px;
         }
-        
-        .education-item:last-child, .experience-item:last-child, .research-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+
+        .interest-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
-        
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
+
+        .interest-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
         }
-        
-        .item-title {
-            font-size: 1.2rem;
+
+        /* Skills Tags */
+        .skill-group {
+            margin-bottom: 26px;
+        }
+
+        .skill-group-title {
+            font-size: 1rem;
             font-weight: 600;
-            color: var(--primary);
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        
-        .item-date {
-            color: var(--gray);
-            font-style: italic;
-        }
-        
-        .item-subtitle {
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: var(--secondary);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
-        
+
         .skill-tag {
-            background-color: var(--light);
-            padding: 8px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            transition: var(--transition);
         }
-        
-        .publication-item {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: var(--light);
-            border-radius: 8px;
-        }
-        
-        .publication-title {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .publication-authors {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-        
-        .publication-link {
-            color: var(--secondary);
-            text-decoration: none;
-        }
-        
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .award-item {
-            background-color: var(--light);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .award-icon {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-        
-        .research-interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .research-interest {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            border-top: 4px solid var(--secondary);
-            transition: transform 0.3s ease;
-        }
-        
-        .research-interest:hover {
-            transform: translateY(-5px);
-        }
-        
-        .research-interest i {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-        
-        .course-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        
-        .course-table th, .course-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .course-table th {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .course-table tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-        
-        .highlight-score {
-            font-weight: bold;
+
+        .skill-tag:hover {
             color: var(--accent);
+            border-color: var(--accent);
+            background: var(--badge-bg);
         }
-        
+
+        /* Coursework Grid */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .course-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        .course-category {
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .course-list {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* References Grid */
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .ref-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .ref-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+        }
+
+        .ref-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .ref-title {
+            font-size: 0.88rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .ref-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ref-role-badge {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.78rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            background: rgba(129, 140, 248, 0.15);
+            color: var(--accent-purple);
+            border: 1px solid rgba(129, 140, 248, 0.3);
+        }
+
+        /* Profile Callout Box */
+        .callout-box {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.05));
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .callout-box p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
         footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            padding: 50px 0 35px;
+            background: var(--bg-surface);
             text-align: center;
         }
-        
-        .social-links {
+
+        .footer-links {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
-        
-        .social-link {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+
+        .footer-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            transition: var(--transition);
         }
-        
-        .social-link:hover {
-            color: var(--secondary);
+
+        .footer-link:hover {
+            color: #ffffff;
+            border-color: var(--accent);
+            background: var(--badge-bg);
+            transform: translateY(-2px);
         }
-        
-        @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2rem;
-            }
-            
-            .header-content h2 {
-                font-size: 1.2rem;
-            }
-            
-            .contact-info {
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 820px) {
+            .hero-wrapper {
                 flex-direction: column;
-                align-items: center;
-                gap: 10px;
+                align-items: flex-start;
+                gap: 24px;
             }
-            
-            .nav-tabs {
+            .profile-img {
+                width: 130px;
+                height: 130px;
+            }
+            .hero-title {
+                font-size: 1.85rem;
+            }
+            .card-header {
                 flex-direction: column;
-                gap: 10px;
-            }
-            
-            .item-header {
-                flex-direction: column;
-            }
-            
-            .skills-grid, .awards-grid, .research-interests-grid {
-                grid-template-columns: 1fr;
+                gap: 6px;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- Header Section -->
     <header>
         <div class="container">
-            <div class="profile-container">
-                <img src="PROFILE.jpg" alt="Michaelangelo Francis-Alfred" class="profile-img" onerror="this.style.display='none'">
-                <div class="header-content">
-                    <h1>Michaelangelo Ifeanyichukwu Francis-Alfred</h1>
-                    <h2>Machine Learning Engineer & Research Scientist</h2>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(+234) 8138246108</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>michaelangeloifeanyichukwu@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
+            <div class="hero-wrapper">
+                <div class="profile-img-container">
+                    <img src="PROFILE.jpg" alt="Michaelangelo Ifeanyichukwu Francis-Alfred" class="profile-img" onerror="this.style.display='none'">
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">MICHAELANGELO IFEANYICHUKWU FRANCIS-ALFRED</h1>
+                    <div class="hero-subtitle">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Graduate Researcher | Machine Learning &amp; Artificial Intelligence | Cybersecurity</span>
+                    </div>
+                    
+                    <div class="hero-contact">
+                        <div class="hero-contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Abuja, Nigeria</span>
                         </div>
+                        <div class="hero-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 813 824 6108</span>
+                        </div>
+                        <div class="hero-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:michaelangeloifeanyichukwu@gmail.com">michaelangeloifeanyichukwu@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="https://github.com/IfyAngelo" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-github"></i> GitHub Profile
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1oHgNmULlMPeL0EeNonSPf65YkARLoHLg?usp=drive_link" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i> Research Reports &amp; Demonstrations
+                        </a>
+                        <a href="mailto:michaelangeloifeanyichukwu@gmail.com" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> Contact
+                        </a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="nav-tabs">
-                <div class="nav-tab active" data-tab="about">About</div>
-                <div class="nav-tab" data-tab="research">Research</div>
-                <div class="nav-tab" data-tab="experience">Experience</div>
-                <div class="nav-tab" data-tab="education">Education</div>
-                <div class="nav-tab" data-tab="skills">Skills</div>
-                <div class="nav-tab" data-tab="publications">Publications</div>
             </div>
         </div>
     </header>
-    
+
+    <!-- Navigation Bar -->
+    <nav class="nav-wrapper">
+        <div class="container">
+            <div class="nav-tabs" role="tablist">
+                <button class="nav-tab active" data-tab="profile" role="tab" aria-selected="true">
+                    <i class="fas fa-user-astronaut"></i> Research Profile
+                </button>
+                <button class="nav-tab" data-tab="research" role="tab" aria-selected="false">
+                    <i class="fas fa-microscope"></i> Research Experience
+                </button>
+                <button class="nav-tab" data-tab="experience" role="tab" aria-selected="false">
+                    <i class="fas fa-briefcase"></i> Work Experience
+                </button>
+                <button class="nav-tab" data-tab="education" role="tab" aria-selected="false">
+                    <i class="fas fa-university"></i> Education &amp; Coursework
+                </button>
+                <button class="nav-tab" data-tab="skills" role="tab" aria-selected="false">
+                    <i class="fas fa-code"></i> Technical Skills
+                </button>
+                <button class="nav-tab" data-tab="awards" role="tab" aria-selected="false">
+                    <i class="fas fa-award"></i> Awards &amp; Certifications
+                </button>
+                <button class="nav-tab" data-tab="references" role="tab" aria-selected="false">
+                    <i class="fas fa-address-book"></i> Academic References
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
     <main class="container">
-        <!-- About Tab -->
-        <div class="tab-content active" id="about">
-            <section>
-                <h2>Professional Summary</h2>
-                <div class="section-content">
-                    <p>I am a Machine Learning professional with a solid background in Computer Engineering, Software Engineering and Artificial Intelligence. My research aims towards solving fundamental multidisciplinary problems that span over Learning and Implementation Algorithms in Deep Learning, Machine Learning Ethics, and AI4SG.</p>
-                    <p>I am driven by a passion for uncovering insights through data, using diagnostics, predictive, and detective analytics to improve business processes, enhance customer satisfaction, and boost revenue. My strengths lie in my extensive knowledge across industries and expertise in data science, machine learning, and artificial intelligence.</p>
-                    <p>Skilled in Python, SQL, and R, I deliver immediate value, adapt to any work structure (remote or on-site), and I'm committed to contributing to team success with attention to detail, strong organizational skills, and a drive for excellence in AI and data science.</p>
-                </div>
-            </section>
+
+        <!-- 1. Research Profile Tab -->
+        <section class="tab-content active" id="profile" role="tabpanel">
+            <div class="section-header">
+                <h2><i class="fas fa-compass"></i> Research Profile &amp; Statement</h2>
+                <p class="section-desc">Overview of academic orientation, methodology, and ongoing scientific focus.</p>
+            </div>
+
+            <div class="callout-box">
+                <p>
+                    <strong>Graduate researcher and machine learning/AI engineer</strong> with a B.Eng. in Computer Engineering and research experience in IoT intrusion detection, behavioural threat detection, sequence modeling, NLP, and LLM-based systems. My core research interest is <strong>multimodal artificial intelligence in pattern recognition for cyber defence</strong>, with emphasis on integrating heterogeneous behavioural evidence to improve reliability, interpretability, and responsible real-world use.
+                </p>
+            </div>
+
+            <div class="section-header" style="margin-top: 40px;">
+                <h2><i class="fas fa-bullseye"></i> Core Research Interests</h2>
+            </div>
             
-            <section>
-                <h2>Highlights</h2>
-                <div class="section-content">
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Industry Impact</h3>
-                            <ul>
-                                <li>Developed AI-powered survey tool automating survey lifecycle</li>
-                                <li>Created open data collection solution for Nigerian states</li>
-                                <li>Built educational LLM-AI system using RAG technology</li>
-                                <li>Reduced manual screening effort by 60% with AI systems</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Research Contributions</h3>
-                            <ul>
-                                <li>ML-based intrusion detection for IoT smart grids</li>
-                                <li>Bi-LSTM models for keylogger detection</li>
-                                <li>Sentiment analysis on telecom quality of service</li>
-                                <li>Bibliometric study on Africa's contribution to ML in healthcare</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Academic Excellence</h3>
-                            <ul>
-                                <li>B.Eng. Computer Engineering (CGPA: 3.64/5.00)</li>
-                                <li>Dean's List Awards (Top 1% in Department)</li>
-                                <li>Heidelberg Laureate Forum Young Researcher 2022</li>
-                                <li>Multiple teaching assistantships in AI/ML courses</li>
-                            </ul>
-                        </div>
+            <div class="interest-grid">
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="interest-title">Multimodal Artificial Intelligence</div>
+                    <div class="interest-desc">Fusing heterogeneous telemetry, visual, and behavioral data streams to boost perception robustness in complex, mission-critical environments.</div>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-brain"></i></div>
+                    <div class="interest-title">Pattern Recognition &amp; Intelligent Systems</div>
+                    <div class="interest-desc">Designing novel feature-selection algorithms and deep representations for detecting anomalies and subtle behavioral signatures.</div>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="interest-title">Applied AI for Cyber Defense</div>
+                    <div class="interest-desc">Hardening IoT smart grids and cyber-physical infrastructures against sophisticated intrusions, keystroke espionage, and zero-day threats.</div>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-users-gear"></i></div>
+                    <div class="interest-title">Human-Agentic AI Interaction</div>
+                    <div class="interest-desc">Engineering transparent, reliable multi-agent workflows and human-in-the-loop systems that augment decision-making with high interpretability.</div>
+                </div>
+            </div>
+
+            <!-- Published Work / Preprints -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2><i class="fas fa-book-open"></i> Scholarly Publication</h2>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Machine Learning for Healthcare: A Bibliometric Study of Contributions from Africa</div>
+                    <span class="card-date">Preprints 2023, 2023020010</span>
+                </div>
+                <div class="card-subtitle">
+                    <i class="fas fa-users"></i> Turki, H.; Pouris, A.; Ifeanyichukwu, F.M.; Namayega, C.; Hadj Taieb, M.A.; Adedayo, S.A.; Fourie, C.; Currin, C.B.; Asiedu, M.N.; Tonja, A.L.; Owodunni, A.T.; Dere, A.; Emezue, C.C.; Muhammad, S.H.; Isa, M.M.; Ben Aouicha, M.
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem;">
+                    Comprehensive time-series and bibliometric evaluation documenting African regional contributions to international healthcare ML literature, identifying collaborative networks, computational capacity gaps, and high-impact interventions.
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="https://doi.org/10.20944/preprints202302.0010.v1" target="_blank" class="btn btn-outline" style="font-size: 0.85rem; padding: 6px 14px;">
+                        <i class="fas fa-external-link-alt"></i> DOI: 10.20944/preprints202302.0010.v1
+                    </a>
+                    <a href="https://drive.google.com/file/d/1DJjV0IqjYyD5Hk-n23aT6IhV8EyVYvkp/view?usp=drive_link" target="_blank" class="view-pill">
+                        <i class="fas fa-file-pdf"></i> View Manuscript Report
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Research Experience Tab -->
+        <section class="tab-content" id="research" role="tabpanel">
+            <div class="section-header">
+                <h2><i class="fas fa-flask"></i> Research Experience</h2>
+                <p class="section-desc">Empirical investigations in IoT intrusion detection, sequence modeling, behavioral analytics, and bibliometrics.</p>
+            </div>
+
+            <!-- Item 1: ML-Based Intrusion Detection -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">ML-Based Intrusion Detection for IoT Smart Grids</div>
+                        <div class="card-subtitle"><i class="fas fa-user-tag"></i> Research Assistant &bull; Supervised by Dr. Bernardi, Anglia Ruskin University</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="card-date">2024</span>
+                        <a href="https://docs.google.com/document/d/1G_IaBdPQRPZCd8ViHKO-9_wTfSvoN4TB/edit?usp=sharing&ouid=107368925906451131683&rtpof=true&sd=true" target="_blank" class="view-pill">
+                            <i class="fas fa-file-lines"></i> View Research Report
+                        </a>
                     </div>
                 </div>
-            </section>
-        </div>
-        
-        <!-- Research Tab (UPDATED) -->
-        <div class="tab-content" id="research">
-            <section>
-                <h2>Research Interests</h2>
-                <div class="section-content">
-                    <div class="research-interests-grid">
-                        <div class="research-interest">
-                            <i class="fas fa-brain"></i>
-                            <h3>Large Language Models</h3>
-                            <p>Advanced NLP systems and their applications in real-world scenarios</p>
-                        </div>
-                        <div class="research-interest">
-                            <i class="fas fa-robot"></i>
-                            <h3>Intelligent Smart Systems</h3>
-                            <p>AI-driven systems that perceive and respond to environmental stimuli</p>
-                        </div>
-                        <div class="research-interest">
-                            <i class="fas fa-database"></i>
-                            <h3>Multimodal Data Retrieval</h3>
-                            <p>Integration of diverse data streams for robust pattern recognition</p>
-                        </div>
-                        <div class="research-interest">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Pattern Recognition Algorithms</h3>
-                            <p>Novel approaches to identifying patterns in complex datasets</p>
-                        </div>
-                        <div class="research-interest">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>AI &amp; Cybersecurity for IoT / CPS</h3>
-                            <p>Securing cyber-physical systems and IoT deployments using ML-driven anomaly detection, intrusion detection, and resilience-focused design.</p>
-                        </div>
+                <ul class="bullet-list">
+                    <li>Investigated machine-learning-based intrusion detection for IoT-based smart grids using Information Gain (IG), Principal Component Analysis (PCA), and hybrid feature-selection methods.</li>
+                    <li>Evaluated classification latency and accuracy under high-dimensional sensor streams from the benchmark <strong>CICIoT2023</strong> dataset.</li>
+                    <li>Formulated feature-reduction strategies balancing computational efficiency on resource-constrained edge gateways with attack-detection fidelity.</li>
+                </ul>
+            </div>
+
+            <!-- Item 2: Bi-LSTM Keylogger Detection -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Bi-LSTM for Keylogger Detection</div>
+                        <div class="card-subtitle"><i class="fas fa-user-tag"></i> Research Assistant &bull; Supervised by Dr. Bernardi, Anglia Ruskin University</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="card-date">2023</span>
+                        <a href="https://drive.google.com/file/d/17ukj-pz7NToVCDxoH9QsFTm5TYuc2x3m/view?usp=sharing" target="_blank" class="view-pill">
+                            <i class="fas fa-file-lines"></i> View Research Report
+                        </a>
                     </div>
                 </div>
-            </section>
-            
-            <section>
-                <h2>Research Statement</h2>
-                <div class="section-content">
-                    <p>My research focuses on <strong>multimodal data infusion for pattern recognition</strong> and on strengthening the security of Internet-of-Things (IoT) and Cyber-Physical Systems (CPS). I aim to combine human-like perceptual strategies with rigorous engineering to build systems that are both highly accurate in detection and resilient to adversarial or operational threats.</p>
-                    
-                    <p>As a Computer Engineering graduate and Machine Learning Engineer, I have worked across embedded systems, signal processing, computer vision, and applied ML. My projects include ML-based intrusion detection for IoT smart grids and Bi-LSTM models for behavioral anomaly detection—work that directly informs my interest in applying multimodal sensing and learning to secure operational systems.</p>
-                    
-                    <p>I am particularly interested in research questions such as:</p>
-                    <ul>
-                        <li><strong>How can multimodal fusion (e.g., visual, network telemetry, and physiological signals) improve the accuracy and robustness of event detection in safety-critical and operational environments?</strong></li>
-                        <li><strong>How can ML-based detectors be designed to identify both benign anomalies and adversarial behaviours in IoT/CPS deployments?</strong></li>
-                        <li><strong>What architectures (attention-guided fusion, temporal models, or hybrid symbolic-ML approaches) best balance detection accuracy with real-time constraints on edge devices?</strong></li>
-                        <li><strong>How can adaptive, privacy-preserving sensing pipelines be built so that systems remain secure and trustworthy while still being effective?</strong></li>
-                    </ul>
-                    
-                    <p>My approach blends practical systems work (embedded sensing, edge ML, deployment-aware optimization) with algorithmic research (multimodal fusion, temporal modelling, and adversarial robustness). The goal is to deliver solutions that are research-grounded and engineering-ready for real-world IoT and CPS scenarios.</p>
-                    
-                    <p>Below are links to reports and artifacts that demonstrate my experience in the space. These materials include detailed evaluations, datasets used, and implementation notes that illustrate both my technical and research capabilities.</p>
-                    
-                    <ul>
-                        <li><a href="https://drive.google.com/drive/folders/1oHgNmULlMPeL0EeNonSPf65YkARLoHLg?usp=sharing" target="_blank" class="publication-link">Project &amp; Research Evidence (Google Drive)</a> — contains my IoT/CPS security reports and multimodal experiments.</li>
-                        <li><span class="publication-link">Selected reports attached to my application (intrusion detection for smart grids; multimodal drowning detection): see the Drive folder above.</span></li>
-                    </ul>
-                    
-                    <p>I am keen to pursue these themes at the MSc level and to collaborate with interdisciplinary teams that bring together design, psychology, and engineering — especially in contexts where safety, privacy, and human wellbeing are paramount.</p>
-                </div>
-            </section>
-            
-            <section>
-                <h2>Research Experience</h2>
-                <div class="section-content">
-                    <div class="research-item">
-                        <div class="item-header">
-                            <div class="item-title">ML-Based Intrusion Detection for IoT Smart Grids</div>
-                            <div class="item-date">2024</div>
-                        </div>
-                        <div class="item-subtitle">Research under Dr. Bernardi, Anglia Ruskin University</div>
-                        <ul>
-                            <li>Performance Evaluation of Machine Learning-Based Intrusion Detection Systems For IoT-Based Smart Grids Using IG, PCA, And Hybrid Feature Selection Methods</li>
-                            <li>Worked with Smart Grid data Sensors for CICIOT2023 dataset</li>
-                        </ul>
+                <ul class="bullet-list">
+                    <li>Investigated Bidirectional Long Short-Term Memory (Bi-LSTM) networks for detecting stealthy keylogger activity in operational host systems, modeling sequential inter-keystroke timing and behavioral artifacts.</li>
+                    <li>Compared performance against state-of-the-art hybrid recurrent architectures and classical anomaly detectors.</li>
+                    <li>Developed a full-stack React and Flask application to demonstrate real-time sequence prediction, feature preparation, and model inference.</li>
+                </ul>
+            </div>
+
+            <!-- Item 3: Sentiment Analysis on Telecoms -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Sentiment Analysis on Telecoms Quality of Service</div>
+                        <div class="card-subtitle"><i class="fas fa-graduation-cap"></i> Undergraduate Thesis &bull; Supervised by Prof. E.O. Ogunti, FUTA</div>
                     </div>
-                    
-                    <div class="research-item">
-                        <div class="item-header">
-                            <div class="item-title">Bi-LSTM for Keylogger Detection</div>
-                            <div class="item-date">2023</div>
-                        </div>
-                        <div class="item-subtitle">Research under Dr. Bernardi, Anglia Ruskin University</div>
-                        <ul>
-                            <li>Studied the comparative analysis of other existing hybrid model against the Bi-LSTM algorithm for detecting presence of keyloggers in production</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="research-item">
-                        <div class="item-header">
-                            <div class="item-title">Sentiment Analysis on Telecoms Quality of Service</div>
-                            <div class="item-date">2023</div>
-                        </div>
-                        <div class="item-subtitle">Research under Prof. E.O. Ogunti, Federal University of Technology, Akure</div>
-                        <ul>
-                            <li>Used Deep Learning to Study the Quality offered by Network Service Providers in Nigeria</li>
-                            <li>Performed sentiment analysis on open-ended data collected from users via social media campaign</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="research-item">
-                        <div class="item-header">
-                            <div class="item-title">Bibliometric Study on Africa's Contribution to ML in Healthcare</div>
-                            <div class="item-date">2022</div>
-                        </div>
-                        <div class="item-subtitle">Open-source research contribution to the Sisonkebiotik research community</div>
-                        <ul>
-                            <li>Performed time series analysis research to study Africa's contribution to global projects around ML in Healthcare</li>
-                        </ul>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="card-date">2023</span>
+                        <a href="https://drive.google.com/file/d/1kdFjl1IDLeTy-w2LEEgFiWCYLDdQ1mEL/view?usp=sharing" target="_blank" class="view-pill">
+                            <i class="fas fa-file-lines"></i> View Thesis Report
+                        </a>
                     </div>
                 </div>
-            </section>
-        </div>
-        
-        <!-- Experience Tab -->
-        <div class="tab-content" id="experience">
-            <section>
-                <h2>Professional Experience</h2>
-                <div class="section-content">
-                    <div class="experience-item">
-                        <div class="item-header">
-                            <div class="item-title">Machine Learning Engineer (LLM Engineering)</div>
-                            <div class="item-date">Jan 2025 – Present</div>
-                        </div>
-                        <div class="item-subtitle">Oaks Intelligence Ltd | Remote, Nigeria</div>
-                        <ul>
-                            <li>Developing AI-powered survey generation, analysis and reporting tool (PollSensei) that automates the survey lifecycle in record time and with optimum accuracy</li>
-                            <li>Optimizing PollSensei for scalability to handle massive influx of requests and users per time</li>
-                        </ul>
+                <ul class="bullet-list">
+                    <li>Applied transformer-based deep learning (BERT) to analyze subscriber feedback and assess the Quality of Service (QoS) across telecommunication service providers in Nigeria.</li>
+                    <li>Curated and preprocessed unstructured, dialectally diverse open-ended user comments collected via targeted social-media campaigns.</li>
+                    <li>Engineered a Flask and React Native application for interactive geospatial and cross-provider sentiment querying.</li>
+                </ul>
+            </div>
+
+            <!-- Item 4: Bibliometric Study -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Bibliometric Study on Africa’s Contribution to Machine Learning in Healthcare</div>
+                        <div class="card-subtitle"><i class="fas fa-hand-holding-heart"></i> Volunteer Researcher &bull; SisonkeBioTik Research Community</div>
                     </div>
-                    
-                    <div class="experience-item">
-                        <div class="item-header">
-                            <div class="item-title">Machine Learning Engineer (Contract)</div>
-                            <div class="item-date">Sept 2024 – Aug 2025</div>
-                        </div>
-                        <div class="item-subtitle">Seismic Consulting Group | On-Site, Abuja, Nigeria</div>
-                        <ul>
-                            <li>Developed an open data collection solution with online/offline synchronization for Oyo, Adamawa, and Katsina (OAK) states in Nigeria, providing accurate records in low-connectivity areas, supporting budget planning and resource allocation</li>
-                            <li>Deployed a budget chatbot to facilitate quick, data-driven insights for stakeholders, enhancing financial accountability and transparency</li>
-                            <li>Created an educational LLM-AI system using Multi Agentic Retrieval-Augmented Generation (RAG) technology to automate lesson planning, schemes of work, and note generation, enhancing teacher workflow efficiency</li>
-                            <li>Engineered a route optimization algorithm for the TransafeAI product, leveraging real-time traffic event data</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="item-header">
-                            <div class="item-title">Machine Learning Engineering Consultant</div>
-                            <div class="item-date">Sept 2022 – Jan 2025</div>
-                        </div>
-                        <div class="item-subtitle">Freelance, Remote</div>
-                        <ul>
-                            <li>Implemented a hybrid Bi-LSTM and RNN model for detecting keyloggers in computer networks, requiring advanced network security protocols and sequential modeling expertise for state-of-the-art results</li>
-                            <li>Built a skin lesion classification system using transfer learning on VGG16 architecture, improving model accuracy and enabling early detection of dermatological conditions in healthcare</li>
-                            <li>Integrated LLMs with semantic ontology-based graph data sources, enabling structured and accurate data retrieval for a retail store</li>
-                            <li>Spearheaded an MSc research project focused on evaluating intrusion detection systems for IoT-based smart grids</li>
-                            <li>Supporting a PhD research initiative to design a cutting-edge multimodal malware detection system</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="item-header">
-                            <div class="item-title">Data Science Consultant</div>
-                            <div class="item-date">Jan 2023 – Sept 2024</div>
-                        </div>
-                        <div class="item-subtitle">Sydani Group | On-Site, Abuja, Nigeria</div>
-                        <ul>
-                            <li>Designed and deployed an AI-driven system that streamlined the job application review process which automated the initial screening of applications, reducing manual effort by 60%</li>
-                            <li>Increased data visibility and accessibility through the development of interactive dashboards, leading to a 25% improvement in resource allocation efficiency</li>
-                            <li>Implemented predictive analytics tools that forecast disease outbreaks, facilitating proactive public health responses and securing additional grants</li>
-                            <li>Created an AI bot capable of providing basic medical advice and triage in remote areas</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="item-header">
-                            <div class="item-title">Teaching Experience</div>
-                            <div class="item-date">2023</div>
-                        </div>
-                        <div class="item-subtitle">Federal University of Technology, Akure (FUTA)</div>
-                        <ul>
-                            <li>Undergraduate Tutorial Teacher of "Operating System" FUTA, CPE 522 (Instructor: Dr. Fadamiro)</li>
-                            <li>Undergraduate Tutorial Teacher of "Artificial Neural Network" FUTA, CPE 504 (Instructor: Prof. E.O Ogunti)</li>
-                            <li>Undergraduate Tutorial Teacher of "Robotics &amp; Automation" FUTA, CPE 502 (Instructor: Dr. F.M Dahunsi)</li>
-                        </ul>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="card-date">2022</span>
+                        <a href="https://drive.google.com/file/d/1DJjV0IqjYyD5Hk-n23aT6IhV8EyVYvkp/view?usp=drive_link" target="_blank" class="view-pill">
+                            <i class="fas fa-file-lines"></i> View Project Report
+                        </a>
                     </div>
                 </div>
-            </section>
-        </div>
-        
-        <!-- Education Tab -->
-        <div class="tab-content" id="education">
-            <section>
-                <h2>Education</h2>
-                <div class="section-content">
-                    <div class="education-item">
-                        <div class="item-header">
-                            <div class="item-title">B.Eng. in Computer Engineering</div>
-                            <div class="item-date">2017 – 2023</div>
-                        </div>
-                        <div class="item-subtitle">The Federal University of Technology, Akure, Nigeria</div>
-                        <p><strong>CGPA:</strong> 3.64/5.00 (Second Class Upper Division)</p>
-                        <p><strong>Maximum GPA Attained:</strong> 5.00/5.00 (Dean's List)</p>
+                <ul class="bullet-list">
+                    <li>Contributed open-source research to the grassroots pan-African biomedical AI collective (SisonkeBioTik).</li>
+                    <li>Executed time-series and bibliometric quantitative analysis to assess Africa’s proportional footprint in healthcare AI scholarship worldwide.</li>
+                    <li>Co-authored the peer review synthesis and academic manuscript in LaTeX (published in Preprints 2023).</li>
+                </ul>
+            </div>
+
+            <!-- Research Hub Callout -->
+            <div class="callout-box" style="text-align: center; margin-top: 30px;">
+                <h3 style="color: #ffffff; margin-bottom: 8px;">Explore All Research Artifacts &amp; Datasets</h3>
+                <p style="margin-bottom: 18px; font-size: 0.95rem;">
+                    Full benchmark datasets, source code, LaTeX preprints, and experimental evaluations are organized in the central Google Drive archive.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1oHgNmULlMPeL0EeNonSPf65YkARLoHLg?usp=drive_link" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Access Complete Research Folder
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Work & Professional Experience Tab -->
+        <section class="tab-content" id="experience" role="tabpanel">
+            <div class="section-header">
+                <h2><i class="fas fa-laptop-code"></i> Professional Experience</h2>
+                <p class="section-desc">Demonstrated engineering excellence across operational intelligence, LLM systems, full-lifecycle ML, and data infrastructure.</p>
+            </div>
+
+            <!-- UniversAI Solutions Ltd -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">AI Adoption Strategist</div>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> UniversAI Solutions Ltd &bull; Abuja, Nigeria</div>
+                    </div>
+                    <span class="card-date">Jan 2026 – Present</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Lead operational-intelligence assessments to identify workflow inefficiencies, process bottlenecks, and automation opportunities across enterprise environments.</li>
+                    <li>Support businesses in transitioning from fragmented manual operations to integrated AI-assisted workflows.</li>
+                    <li>Develop AI consulting frameworks focused on automation readiness, process optimization, and measurable business impact.</li>
+                    <li>Contribute to process-automation initiatives that improve execution consistency across client-facing and internal operations.</li>
+                </ul>
+            </div>
+
+            <!-- Oaks Intelligence Ltd -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Machine Learning Engineer (LLM Engineering)</div>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> Oaks Intelligence Ltd &bull; Bristol, England (Remote)</div>
+                    </div>
+                    <span class="card-date">Jan 2025 – Jan 2026</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Architected and deployed <strong>PollSensei</strong>, an end-to-end AI-powered survey generation, analysis, and automated reporting system that condenses weeks of survey research into real-time insights.</li>
+                    <li>Optimized LLM orchestration pipelines for scalability, throughput, and low latency under high concurrent user loads.</li>
+                    <li>Implemented automated parsing, qualitative insight extraction, and structured JSON report formatting.</li>
+                </ul>
+            </div>
+
+            <!-- Seismic Consulting Group -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Machine Learning Engineer (Contract)</div>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> Seismic Consulting Group &bull; Abuja, Nigeria</div>
+                    </div>
+                    <span class="card-date">Sept 2024 – Aug 2025</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Developed an open-data collection solution featuring robust online/offline synchronization for state governments (Oyo, Adamawa, and Katsina states), enabling field data collection in low-connectivity areas.</li>
+                    <li>Deployed an interactive budget chatbot providing rapid, natural-language, data-driven financial insights for government stakeholders.</li>
+                    <li>Created an educational LLM platform using Multi-Agent Retrieval-Augmented Generation (RAG) to automate dynamic lesson planning, schemes of work, and curriculum-aligned note generation.</li>
+                </ul>
+            </div>
+
+            <!-- Sydani Group -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Data Science Intern</div>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> Sydani Group &bull; Abuja, Nigeria</div>
+                    </div>
+                    <span class="card-date">Jan 2024 – Aug 2024</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Designed an AI-driven candidate application-review system to automate initial resume screening, cutting manual screening turnaround by 60%.</li>
+                    <li>Developed interactive analytics dashboards and predictive forecasting tools for public-health interventions and resource allocation.</li>
+                    <li>Engineered an AI bot for basic medical advisory and preliminary triage in underserved remote clinics, integrating Integrated Community Case Management (ICCM) protocols.</li>
+                </ul>
+            </div>
+
+            <!-- SisonkeBioTik Labs -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Machine Learning Research Intern</div>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> SisonkeBioTik Labs &bull; Remote, South Africa</div>
+                    </div>
+                    <span class="card-date">Sept 2022 – Mar 2023</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Contributed to open-source collaborative research on AI in the African medical and healthcare domain.</li>
+                    <li>Participated in cross-institutional peer reviews, statistical validation, and academic manuscript development using LaTeX.</li>
+                </ul>
+            </div>
+
+            <!-- Hamoye Labs -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Data Science Intern</div>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> Hamoye Labs &bull; Remote, India</div>
+                    </div>
+                    <span class="card-date">Jan 2022 – Jul 2022</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Analysed large-scale energy-consumption data and developed predictive models for energy-use forecasting and efficiency analysis.</li>
+                    <li>Contributed to satellite-image analysis using computer vision and machine-learning methods for land-use classification.</li>
+                    <li>Created clear data visualizations to communicate complex analytical findings to non-technical stakeholders.</li>
+                </ul>
+            </div>
+
+            <!-- Prunedge Development Technologies Ltd -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Machine Learning Engineering Intern</div>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> Prunedge Development Technologies Ltd &bull; Lagos, Nigeria</div>
+                    </div>
+                    <span class="card-date">May 2021 – Nov 2021</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Conducted data cleaning and natural language analysis on customer feedback to identify preferences and user pain points.</li>
+                    <li>Contributed to a content-based article recommender engine.</li>
+                    <li>Participated in the design and implementation of image-processing algorithms for facial detection and verification.</li>
+                </ul>
+            </div>
+
+            <!-- Teaching Experience -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2><i class="fas fa-chalkboard-user"></i> Teaching &amp; Academic Mentorship</h2>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Undergraduate Tutorial Teacher</div>
+                        <div class="card-subtitle"><i class="fas fa-university"></i> Federal University of Technology, Akure (FUTA)</div>
+                    </div>
+                    <span class="card-date">2023</span>
+                </div>
+                <ul class="bullet-list">
+                    <li><strong>Operating Systems (CPE 522)</strong> — Instructor: Dr. Fadamiro. Led tutorial recitations on process scheduling, memory management, and concurrency.</li>
+                    <li><strong>Artificial Neural Networks (CPE 504)</strong> — Instructor: Prof. E.O. Ogunti. Guided senior students through feedforward nets, backpropagation, and CNN architectures.</li>
+                    <li><strong>Robotics &amp; Automation (CPE 502)</strong> — Instructor: Dr. F.M. Dahunsi. Facilitated labs on kinematics, actuator control, and embedded microcontrollers.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. Education & Coursework Tab -->
+        <section class="tab-content" id="education" role="tabpanel">
+            <div class="section-header">
+                <h2><i class="fas fa-user-graduate"></i> Academic Background</h2>
+                <p class="section-desc">Formal degree qualifications, thesis defense, and core departmental coursework.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">B.Eng. in Computer Engineering</div>
+                        <div class="card-subtitle"><i class="fas fa-university"></i> Federal University of Technology, Akure (FUTA), Nigeria</div>
+                    </div>
+                    <span class="card-date">2017 – 2023</span>
+                </div>
+                <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px;">
+                    <div><strong style="color: var(--accent);">CGPA:</strong> 3.64 / 5.00 (Second Class Upper Division)</div>
+                    <div><strong style="color: var(--accent);">Peak Term GPA:</strong> 5.00 / 5.00 (Dean's List Honoree)</div>
+                </div>
+                <ul class="bullet-list">
+                    <li><strong>Undergraduate Thesis:</strong> Sentiment Analysis on Telecoms Quality of Service using Deep Learning (BERT).</li>
+                    <li><strong>Research Advisor:</strong> Prof. E.O. Ogunti.</li>
+                </ul>
+            </div>
+
+            <div class="section-header" style="margin-top: 40px;">
+                <h2><i class="fas fa-book"></i> Selected Academic Preparation</h2>
+                <p class="section-desc">Rigorous engineering and theoretical foundation supporting graduate studies in AI &amp; Cyber Defense.</p>
+            </div>
+
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-category"><i class="fas fa-microchip"></i> Computer Engineering</div>
+                    <div class="course-list">
+                        Computer Organization &amp; Architecture; Microprocessor System &amp; Interfacing; Embedded System Design; Robotics &amp; Automation.
                     </div>
                 </div>
-            </section>
-            
-            <section>
-                <h2>Relevant Coursework</h2>
-                <div class="section-content">
-                    <table class="course-table">
-                        <thead>
-                            <tr>
-                                <th>Course</th>
-                                <th>Grade</th>
-                                <th>Relevance to Research</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Artificial Neural Networks</td>
-                                <td class="highlight-score">A (70)</td>
-                                <td>Foundation for deep learning research</td>
-                            </tr>
-                            <tr>
-                                <td>Robotics &amp; Automation</td>
-                                <td class="highlight-score">A (85)</td>
-                                <td>Intelligent systems and control theory</td>
-                            </tr>
-                            <tr>
-                                <td>Digital Signal Processing</td>
-                                <td>C (56)</td>
-                                <td>Signal analysis for multimodal systems</td>
-                            </tr>
-                            <tr>
-                                <td>Digital Image Processing</td>
-                                <td>A (75)</td>
-                                <td>Computer vision applications</td>
-                            </tr>
-                            <tr>
-                                <td>Embedded System Design</td>
-                                <td>B (64)</td>
-                                <td>Hardware implementation of AI systems</td>
-                            </tr>
-                            <tr>
-                                <td>Microprocessor System &amp; Interfacing</td>
-                                <td class="highlight-score">A (78)</td>
-                                <td>Low-level system architecture</td>
-                            </tr>
-                            <tr>
-                                <td>Computer Organization &amp; Architecture</td>
-                                <td>B (67)</td>
-                                <td>Computational efficiency in ML systems</td>
-                            </tr>
-                            <tr>
-                                <td>Software Engineering Techniques</td>
-                                <td>B (66)</td>
-                                <td>ML system development methodologies</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            
-            <section>
-                <h2>Honors &amp; Awards</h2>
-                <div class="section-content">
-                    <div class="awards-grid">
-                        <div class="award-item">
-                            <div class="award-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <h3>Heidelberg Laureate Forum</h3>
-                            <p>Young Researcher 2022</p>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <h3>Faculty Dean's Award</h3>
-                            <p>Dean's List GPA of 5.00/5.00 for 2nd Semester Year 5</p>
-                            <p>Top 1% in Computer Engineering Department</p>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon">
-                                <i class="fas fa-medal"></i>
-                            </div>
-                            <h3>Faculty Dean's Award</h3>
-                            <p>Dean's List GPA of 5.00/5.00 for 2nd Semester Year 4</p>
-                            <p>Top 1% in Computer Engineering Department</p>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h3>Most Improved Student</h3>
-                            <p>Class of 2021</p>
-                            <p>Issued by National Association of Computer Engineering Students</p>
-                        </div>
+                <div class="course-card">
+                    <div class="course-category"><i class="fas fa-terminal"></i> Programming &amp; Systems</div>
+                    <div class="course-list">
+                        Software Engineering Techniques; Assembly Language Programming; Object-Oriented Programming (C# &amp; Python); Programming in C; Operating Systems.
                     </div>
                 </div>
-            </section>
-        </div>
-        
-        <!-- Skills Tab -->
-        <div class="tab-content" id="skills">
-            <section>
-                <h2>Technical Skills</h2>
-                <div class="section-content">
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Technical Domains</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Data Science</span>
-                                <span class="skill-tag">Machine Learning</span>
-                                <span class="skill-tag">Artificial Intelligence</span>
-                                <span class="skill-tag">Generative AI</span>
-                                <span class="skill-tag">LLM Engineering</span>
-                                <span class="skill-tag">Data Wrangling</span>
-                                <span class="skill-tag">Data Modeling</span>
-                                <span class="skill-tag">Statistical Analysis</span>
-                                <span class="skill-tag">Data Visualization</span>
-                                <span class="skill-tag">Deep Learning</span>
-                                <span class="skill-tag">MLOps</span>
-                                <span class="skill-tag">Quantitative Analysis</span>
-                                <span class="skill-tag">Hardware Programming</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h3>Programming Languages</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">R</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">C</span>
-                                <span class="skill-tag">C#</span>
-                                <span class="skill-tag">Assembly Language</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h3>ML &amp; Data Science Libraries</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">TensorFlow</span>
-                                <span class="skill-tag">PyTorch</span>
-                                <span class="skill-tag">Keras</span>
-                                <span class="skill-tag">Scikit-Learn</span>
-                                <span class="skill-tag">NumPy</span>
-                                <span class="skill-tag">Pandas</span>
-                                <span class="skill-tag">Matplotlib</span>
-                                <span class="skill-tag">Seaborn</span>
-                                <span class="skill-tag">Plotly</span>
-                                <span class="skill-tag">GGplot</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h3>Frameworks &amp; Tools</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Langchain</span>
-                                <span class="skill-tag">CrewAI</span>
-                                <span class="skill-tag">FastAPI</span>
-                                <span class="skill-tag">Flask</span>
-                                <span class="skill-tag">Streamlit</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Kubernetes</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">GCP</span>
-                                <span class="skill-tag">PowerBI</span>
-                                <span class="skill-tag">LaTeX</span>
-                            </div>
-                        </div>
+                <div class="course-card">
+                    <div class="course-category"><i class="fas fa-wave-square"></i> AI &amp; Signal Processing</div>
+                    <div class="course-list">
+                        Artificial Neural Networks; Digital Image Processing; Digital Signal Processing; Control Systems.
                     </div>
                 </div>
-            </section>
-            
-            <section>
-                <h2>Certifications</h2>
-                <div class="section-content">
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Professional Certifications</h3>
-                            <ul>
-                                <li>AWS Machine Learning Foundations (AWS)</li>
-                                <li>Python for Data Science (IBM)</li>
-                                <li>Data Science Specialization (IBM)</li>
-                                <li>Certified Data Scientist (Hamoye)</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h3>Professional Memberships</h3>
-                            <ul>
-                                <li>International Association of Engineers (IAENG)</li>
-                                <li>IAENG Society of Artificial Intelligence</li>
-                                <li>IAENG Society of Computer Science</li>
-                                <li>Association of Computing and Machinery (ACM)</li>
-                                <li>Data Scientists Network / Data Science Nigeria</li>
-                                <li>Sydani Alumni Network</li>
-                            </ul>
-                        </div>
+            </div>
+        </section>
+
+        <!-- 5. Technical Skills Tab -->
+        <section class="tab-content" id="skills" role="tabpanel">
+            <div class="section-header">
+                <h2><i class="fas fa-tools"></i> Technical Capabilities</h2>
+                <p class="section-desc">Comprehensive toolset spanning empirical AI research, production engineering, and embedded hardware.</p>
+            </div>
+
+            <div class="card">
+                <div class="skill-group">
+                    <div class="skill-group-title"><i class="fas fa-brain" style="color: var(--accent);"></i> Research &amp; Methods</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Artificial Intelligence</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Natural Language Processing (NLP)</span>
+                        <span class="skill-tag">Generative AI</span>
+                        <span class="skill-tag">LLM Engineering</span>
+                        <span class="skill-tag">Data Wrangling</span>
+                        <span class="skill-tag">Data Modelling</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Quantitative Analysis</span>
+                        <span class="skill-tag">Empirical Research Design</span>
                     </div>
                 </div>
-            </section>
-        </div>
-        
-        <!-- Publications Tab -->
-        <div class="tab-content" id="publications">
-            <section>
-                <h2>Publications</h2>
-                <div class="section-content">
-                    <div class="publication-item">
-                        <div class="publication-title">Machine Learning for Healthcare: A Bibliometric Study of Contributions from Africa</div>
-                        <div class="publication-authors">Turki, H.; Pouris, A.; Ifeanyichukwu, F.M.; Namayega, C.; Hadj Taieb, M.A.; Adedayo, S.A.; Fourie, C.; Currin, C.B.; Asiedu, M.N.; Tonja, A.L.; Owodunni, A.T.; Dere, A.; Emezue, C.C.; Muhammad, S.H.; Isa, M.M.; Ben Aouicha, M.</div>
-                        <div class="publication-info">Preprints 2023, 2023020010</div>
-                        <a href="https://doi.org/10.20944/preprints202302.0010.v1" class="publication-link" target="_blank">View Publication</a>
+
+                <div class="skill-group">
+                    <div class="skill-group-title"><i class="fas fa-code" style="color: var(--accent);"></i> Programming &amp; Data</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Scikit-Learn</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C#</span>
                     </div>
                 </div>
-            </section>
-            
-            <section>
-                <h2>Conferences Attended</h2>
-                <div class="section-content">
-                    <ul>
-                        <li>9th Heidelberg Laureate Forum (Heidelberg, Germany) - Sept 2022</li>
-                        <li>IndabaX, Deep Learning Conference (Ibadan, Nigeria) - Oct 2022</li>
-                        <li>DataFest Conference (Lagos, Nigeria) - Oct 2022</li>
-                    </ul>
+
+                <div class="skill-group">
+                    <div class="skill-group-title"><i class="fas fa-cubes" style="color: var(--accent);"></i> Engineering &amp; Platforms</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Amazon Web Services (AWS)</span>
+                        <span class="skill-tag">Google Cloud Platform (GCP)</span>
+                        <span class="skill-tag">Git &amp; GitHub</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">FastAPI</span>
+                    </div>
                 </div>
-            </section>
-        </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title"><i class="fas fa-chart-pie" style="color: var(--accent);"></i> Analytics &amp; Visualization</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Microsoft Excel</span>
+                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Ggplot</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title"><i class="fas fa-microchip" style="color: var(--accent);"></i> Systems &amp; Hardware</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Proteus Design Suite</span>
+                        <span class="skill-tag">Hardware Programming</span>
+                        <span class="skill-tag">Embedded Electronics</span>
+                    </div>
+                </div>
+
+                <div class="skill-group" style="margin-bottom: 0;">
+                    <div class="skill-group-title"><i class="fas fa-file-lines" style="color: var(--accent);"></i> Documentation &amp; Scientific Communication</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">Microsoft Word</span>
+                        <span class="skill-tag">PowerPoint</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Honors, Awards & Certifications Tab -->
+        <section class="tab-content" id="awards" role="tabpanel">
+            <div class="section-header">
+                <h2><i class="fas fa-trophy"></i> Honours &amp; Awards</h2>
+                <p class="section-desc">Competitive fellowships, institutional awards, and academic distinctions.</p>
+            </div>
+
+            <div class="interest-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-medal" style="color: #fbbf24;"></i></div>
+                    <div class="interest-title">Heidelberg Laureate Forum: Young Researcher</div>
+                    <div class="interest-desc">Selected as an international Young Researcher for the 9th Heidelberg Laureate Forum in Germany (2022).</div>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-star" style="color: #38bdf8;"></i></div>
+                    <div class="interest-title">Most Improved Student, Class of 2021</div>
+                    <div class="interest-desc">Conferred by the National Association of Computer Engineering Students (2022).</div>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-certificate" style="color: #34d399;"></i></div>
+                    <div class="interest-title">Faculty Dean’s Award — Dean’s List</div>
+                    <div class="interest-desc">Perfect 5.00/5.00 GPA in Second Semester Year 5. Ranked Top 1% in Department (2020–2021).</div>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon"><i class="fas fa-certificate" style="color: #34d399;"></i></div>
+                    <div class="interest-title">Faculty Dean’s Award — Dean’s List</div>
+                    <div class="interest-desc">Perfect 5.00/5.00 GPA in Second Semester Year 4. Ranked Top 1% in Department (2019–2020).</div>
+                </div>
+            </div>
+
+            <!-- Certifications & Professional Development -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2><i class="fas fa-stamp"></i> Certifications &amp; Professional Development</h2>
+            </div>
+            <div class="card">
+                <ul class="bullet-list">
+                    <li><strong>AWS Machine Learning Foundations</strong> — Amazon Web Services (AWS)</li>
+                    <li><strong>McKinsey Forward Program</strong> — McKinsey &amp; Company</li>
+                    <li><strong>AI Literacy</strong> — IBM</li>
+                    <li><strong>Python for Data Science</strong> — IBM</li>
+                    <li><strong>Data Science Specialization</strong> — IBM</li>
+                    <li><strong>Certified Data Scientist</strong> — Hamoye</li>
+                </ul>
+            </div>
+
+            <!-- Conferences & Scholarly Events -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2><i class="fas fa-users-rectangle"></i> Conferences &amp; Scholarly Events</h2>
+            </div>
+            <div class="card">
+                <ul class="bullet-list">
+                    <li><strong>9th Heidelberg Laureate Forum</strong> &bull; Heidelberg, Germany (2022)</li>
+                    <li><strong>IndabaX Deep Learning Conference</strong> &bull; University of Ibadan, Nigeria (2022)</li>
+                    <li><strong>DataFest Conference</strong> &bull; Lagos, Nigeria (2022)</li>
+                </ul>
+            </div>
+
+            <!-- Professional Affiliations -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2><i class="fas fa-id-badge"></i> Professional Affiliations</h2>
+            </div>
+            <div class="card">
+                <ul class="bullet-list">
+                    <li><strong>Nigeria Computer Society (NCS)</strong> (2026)</li>
+                    <li><strong>Sydani Alumni Network</strong> (2024)</li>
+                    <li><strong>Data Scientists Network / Data Science Nigeria</strong> (2022)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 7. Academic References Tab -->
+        <section class="tab-content" id="references" role="tabpanel">
+            <div class="section-header">
+                <h2><i class="fas fa-user-check"></i> Academic References</h2>
+                <p class="section-desc">University professors, academic mentors, and research advisors familiar with my scholarship.</p>
+            </div>
+
+            <div class="ref-grid">
+                <!-- Reference 1 -->
+                <div class="ref-card">
+                    <div class="ref-name">Prof. F.M. Dahunsi</div>
+                    <div class="ref-title">Professor &bull; Dept. of Computer Engineering</div>
+                    <div class="ref-meta">
+                        <i class="fas fa-university"></i> Federal University of Technology, Akure
+                    </div>
+                    <div class="ref-meta">
+                        <i class="fas fa-envelope"></i> <a href="mailto:fmdahunsi@futa.edu.ng">fmdahunsi@futa.edu.ng</a>
+                    </div>
+                    <div class="ref-meta">
+                        <i class="fas fa-phone"></i> +234 810 156 4160
+                    </div>
+                    <span class="ref-role-badge">HOD &amp; Undergraduate Course Advisor</span>
+                </div>
+
+                <!-- Reference 2 -->
+                <div class="ref-card">
+                    <div class="ref-name">Dr. Ayobami Adedokun</div>
+                    <div class="ref-title">Senior Lecturer &bull; Dept. of Computer Engineering</div>
+                    <div class="ref-meta">
+                        <i class="fas fa-university"></i> Federal University of Technology, Akure
+                    </div>
+                    <div class="ref-meta">
+                        <i class="fas fa-envelope"></i> <a href="mailto:aoadedokun@futa.edu.ng">aoadedokun@futa.edu.ng</a>
+                    </div>
+                    <div class="ref-meta">
+                        <i class="fas fa-phone"></i> +234 708 582 7159
+                    </div>
+                    <span class="ref-role-badge">Lecturer &amp; Laboratory Supervisor</span>
+                </div>
+
+                <!-- Reference 3 -->
+                <div class="ref-card">
+                    <div class="ref-name">Prof. T.C. Nzeadibe</div>
+                    <div class="ref-title">Professor &amp; Dean &bull; Faculty of Social Sciences</div>
+                    <div class="ref-meta">
+                        <i class="fas fa-university"></i> University of Nigeria, Nsukka
+                    </div>
+                    <div class="ref-meta">
+                        <i class="fas fa-envelope"></i> <a href="mailto:chidi.nzeadibe@unn.edu.ng">chidi.nzeadibe@unn.edu.ng</a>
+                    </div>
+                    <div class="ref-meta">
+                        <i class="fas fa-phone"></i> +234 803 772 7927
+                    </div>
+                    <span class="ref-role-badge">Academic &amp; Research Mentor</span>
+                </div>
+            </div>
+        </section>
+
     </main>
-    
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>(+234) 8138246108</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>michaelangeloifeanyichukwu@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Abuja, Nigeria</span>
-                </div>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://github.com/IfyAngelo" class="social-link" target="_blank">
+            <div class="footer-links">
+                <a href="https://github.com/IfyAngelo" target="_blank" class="footer-link" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://drive.google.com/drive/folders/1oHgNmULlMPeL0EeNonSPf65YkARLoHLg?usp=drive_link" target="_blank" class="footer-link" title="Research Reports">
+                    <i class="fas fa-folder-open"></i>
                 </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-twitter"></i>
+                <a href="mailto:michaelangeloifeanyichukwu@gmail.com" class="footer-link" title="Email">
+                    <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            
-            <p>&copy; 2025 Michaelangelo Ifeanyichukwu Francis-Alfred. All rights reserved.</p>
+            <p class="footer-text">
+                &copy; 2026 Michaelangelo Ifeanyichukwu Francis-Alfred. Built for Graduate Research &amp; Academic Admissions.
+            </p>
         </div>
     </footer>
 
+    <!-- Tab Switching Script -->
     <script>
-        // Tab navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const tabs = document.querySelectorAll('.nav-tab');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
+            const contents = document.querySelectorAll('.tab-content');
+
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    const tabId = tab.getAttribute('data-tab');
-                    
-                    // Remove active class from all tabs and contents
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    
-                    // Add active class to current tab and content
+                    const targetId = tab.getAttribute('data-tab');
+
+                    // Reset tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+
+                    // Reset contents
+                    contents.forEach(c => {
+                        c.classList.remove('active');
+                    });
+
+                    // Activate selected tab & content
                     tab.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+
+                    const targetContent = document.getElementById(targetId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
                 });
             });
         });
